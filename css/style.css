@@ -46,9 +46,6 @@ body{
     gap:30px;
     transition:all 0.2s ease;
 }
-.bday{
-    
-}
 .d, .m, .y{
     color:var(--sg);
     display: flex;
