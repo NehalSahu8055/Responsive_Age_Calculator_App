@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;800&display=swap');
+
+:root {
+    --pple: hsl(259, 100%, 65%);
+    --lr: hsl(0, 100%, 67%);
+    --wht: hsl(0, 0%, 100%);
+    --Ofwht: hsl(0, 0%, 94%);
+    --lg: hsl(0, 0%, 86%);
+    --sg: hsl(0, 1%, 44%);
+    --ofblck: hsl(0, 0%, 8%);
+    --pink:hsl(350, 100%, 88%);
+
+    --fs-xs:0.8rem;
+    --fs-s:1rem;
+    --fs-l:2rem;
+    --fs-xl:5rem;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--Ofwht);
+    padding:50px 0;
+}
+.container{
+    background-color: var(--wht);
+    border-radius: 1.7em 1.7em 12em 1.7em;
+    padding:3.5em;
+    max-width: 840px;
+    width:100%;
+    max-height: 700px;
+    height:100%;
+    box-shadow: 0px 0px 20px 1px #00000012;
+}
+.dmy{
+    width:80%;
+    display: flex;
+    flex-direction: row;
+    gap:30px;
+    transition:all 0.2s ease;
+}
+.bday{
+    
+}
+.d, .m, .y{
+    color:var(--sg);
+    display: flex;
+    flex-direction: column;
+    font-size: var(--fs-s);
+    font-weight: 700;
+    letter-spacing: 2px;
+    gap:11px;
+}
+input{
+    width:100%;
+    height: 72px;
+    outline:none;
+    border:1px solid var(--lg);
+    border-radius: 11px;
+    padding:20px;
+    font-size:var(--fs-l);
+    font-weight: 800;
+    caret-color:var(--pple);
+    
+}
+input:focus{
+    border-color:var(--pple);
+}
+
+.ymd{
+    margin-top:-50px;
+    display: flex;
+    flex-direction:column;
+}
+.date{
+    display: inline-flex;
+    align-items: center;
+    gap:19px;
+}
+.digit, .yr-mt-dy{
+    font-size: var(--fs-xl);
+    font-style: italic;
+    font-weight: 800;
+}
+.digit{
+    color:var(--pple);    
+}
+hr{
+    margin-top:47px;
+    border:2px solid var(--lg);
+    opacity: 0.5;
+}
+.circle{
+    position: relative;
+    top:-50px;
+    right: -320px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:97px;
+    height:97px;
+    background-color: var(--pple);
+    border:none;
+    border-radius:50%;
+    margin:0 auto;
+
+    animation-name: spin;
+    animation-duration: 5000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    transition:all 0.2s ease-out;
+    
+}
+.circle:hover{
+    background-color: var(--ofblck);
+    cursor: pointer;
+    transition:all 0.8s ease-out;
+}
+.check{
+    font-size: var(--fs-xs);
+    font-weight: 400;
+    color:var(--lr);
+    letter-spacing: normal;
+    max-width:175px;
+    width: 100%;
+    height: 30px;
+    font-style: italic;
+}
+.bday-container{
+    display: flex;
+    display: none;
+    border-radius:15px;
+    border:5px dotted var(--pink);
+}
+.bday{
+    width: 400px;
+    height: 600px;
+    border-radius:15px;
+    box-shadow: 1px 7px 20px 10px hsl(259deg 100% 65% / 13%);
+}
+@keyframes spin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+}
+
+@media only screen and (max-width:1000px){
+
+    :root{
+        --fs-l:2rem;
+        --fs-xl:4rem;
+    }
+    body{
+        padding:40px 10px;
+    }
+    .circle{
+        top:-50px;
+        right: 0px;
+        margin-bottom: 30px;
+    }
+    .dmy{
+        width: 100%;
+        gap:10px;
+    }
+    input{
+        padding:8px;
+        width: 100%;
+        height: 50px;
+    }   
+     
+    .check{
+        margin-bottom: 20px;
+    }
+}
+
+@media only screen and (max-width:500px){
+    :root{
+        --fs-l:1.5rem;
+        --fs-xl:2.5rem;
+    }
+    input{
+        padding:0;
+        height: 50px;
+    }   
+}
+
+
+
+
+
+
