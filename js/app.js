@@ -33,6 +33,8 @@ function urYr(){
 
 function checkDate()
 {
+    var leapYear = (getCurYr() % 4 == 0 && getCurYr() % 100 != 0) || getCurYr() % 400 == 0;
+    var a = [31, leapYear?29:28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
     var y = document.querySelector(".ydigit");
     var m = document.querySelector(".mdigit");
     var d = document.querySelector(".ddigit");
@@ -44,7 +46,10 @@ function checkDate()
         m.textContent = 12-Math.abs(m.textContent);
         y.textContent-=1;
     }
-}       
+    if(d.textContent<0){
+        d.textContent = a[getCurMnth()-1]-urDay();
+    }
+}        
 
 function checkDay(){
     var leapYear = (getCurYr() % 4 == 0 && getCurYr() % 100 != 0) || getCurYr() % 400 == 0;
